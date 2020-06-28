@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
+* {
+  outline: none;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+* a {
+  text-decoration: none;
+  color: #333333;
+  cursor: pointer;
+}
+
+* a .active {
+  color: #F7B633;
+}
+
+@-webkit-keyframes slideUp {
+  0% {
+    -webkit-transform: translate(0, 40px);
+            transform: translate(0, 40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    -webkit-transform: translate(0, 40px);
+            transform: translate(0, 40px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+.main-header {
+  color: #fefefe;
+}
+
+.main-menu {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  top: 0;
+  min-height: 100px;
+  padding: 40px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 1170px;
+  z-index: 4;
+}
+
+.main-menu .logo {
+  font-size: 24px;
+  text-transform: uppercase;
+  margin: 0 15px;
+  width: 16%;
+}
+
+.main-menu .logo .logo-link {
+  color: #fefefe;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.main-menu .menu-tabs {
+  margin-left: 15px;
+  width: 84%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+}
+
+.main-menu .menu-tabs .menu-tabs-list {
+  margin: 0;
+  margin-top: 8px;
+  padding: 0 15px;
+}
+
+.main-menu .menu-tabs .menu-tabs-list .menu-tab {
+  display: inline;
+  list-style: none;
+}
+
+.main-menu .menu-tabs .menu-tabs-list .menu-tab .menu-tab-link {
+  color: #fefefe;
+  padding: 30px 12px;
+}
+
+.main-menu .menu-tabs .menu-tabs-list .menu-tab .menu-tab-link.active {
+  color: #F7B633;
+}
+
+.main-slider {
+  background-size: cover;
+  position: relative;
+}
+
+.main-slider .slide-content {
+  padding: 30px 16%;
+  z-index: 2;
+}
+
+.main-slider .header-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(45deg, #43DDE6, #9870FC);
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.main-slider .slides-list {
+  min-height: 700px;
+  position: relative;
+}
+
+.main-slider .slides-list .slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  visibility: hidden;
+  -webkit-transition: visibility .1s ease;
+  transition: visibility .1s ease;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  min-height: 700px;
+  position: absolute;
+  top: 0;
+  opacity: 1;
+}
+
+.main-slider .slides-list .slide.slide-1 {
+  background: url(../img/img_bg_1.jpg);
+  background-size: cover;
+}
+
+.main-slider .slides-list .slide.slide-2 {
+  background: url(../img/img_bg_2.jpg);
+  background-size: cover;
+}
+
+.main-slider .slides-list .slide.slide-3 {
+  background: url(../img/img_bg_3.jpg);
+  background-size: cover;
+}
+
+.main-slider .slides-list .slide.slide-4 {
+  background: url(../img/img_bg_4.jpg);
+  background-size: cover;
+}
+
+.main-slider .slides-list .slide h1, .main-slider .slides-list .slide h2 {
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+}
+
+.main-slider .slides-list .slide h1 {
+  margin-bottom: 30px;
+  font-size: 50px;
+  line-height: 1.3;
+  font-weight: 300;
+}
+
+.main-slider .slides-list .slide h2 {
+  font-size: 22px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.main-slider .slides-list .slide-radio {
+  display: none;
+}
+
+.main-slider .slides-list .slide-radio:checked + .slide {
+  visibility: visible;
+}
+
+.main-slider .slides-list .slide-radio:checked + .slide h1, .main-slider .slides-list .slide-radio:checked + .slide h2 {
+  -webkit-animation: slideUp 1s;
+          animation: slideUp 1s;
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+}
+
+.main-slider .slides-list .slide-radio:checked + .slide h1 {
+  opacity: 1;
+}
+
+.main-slider .slides-list .slide-radio:checked + .slide h2 {
+  opacity: 0.7;
+}
+
+.main-slider .slides-list .slide-radio.slide-1:checked ~ .slides-dots .dot-1,
+.main-slider .slides-list .slide-radio.slide-2:checked ~ .slides-dots .dot-2,
+.main-slider .slides-list .slide-radio.slide-3:checked ~ .slides-dots .dot-3,
+.main-slider .slides-list .slide-radio.slide-4:checked ~ .slides-dots .dot-4 {
+  background-color: #F7B633;
+  opacity: 1;
+}
+
+.main-slider .slides-list .slides-dots {
+  position: absolute;
+  bottom: 7em;
+  text-align: center;
+  z-index: 20;
+  width: 100%;
+  list-style: none;
+}
+
+.main-slider .slides-list .slides-dots .slide-dot-link {
+  cursor: pointer;
+  width: 11px;
+  height: 11px;
+  margin: 0 6px;
+  background-color: #fefefe;
+  border-radius: 20px;
+  display: block;
+  opacity: 0.2;
+  display: inline-block;
+}
+
+.main-slider .slides-list .slides-dots .slide-dot-link.active {
+  background-color: #F7B633;
+  opacity: 1;
+}
+
+.main-intro {
+  padding: 0 15px;
+  width: 1170px;
+  margin: 0 auto;
+}
+
+.main-intro .container {
+  margin-top: -6.4em;
+  position: relative;
+  z-index: 4;
+}
+
+.main-intro .container .intro-tabs-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-intro .container .intro-tabs-list .intro-tab {
+  width: 25%;
+  list-style: none;
+  background-color: #fefefe;
+  opacity: 0.5;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.main-intro .container .intro-tabs-list .intro-tab.active {
+  opacity: 1;
+}
+
+.main-intro .container .intro-tabs-list .intro-tab .intro-tab-label {
+  display: block;
+  padding: 2.7em 1em;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.main-intro .container .intro-contents {
+  position: relative;
+}
+
+.main-intro .container .intro-contents .intro-radio {
+  display: none;
+}
+
+.main-intro .container .intro-contents .intro-radio:checked + .intro-content {
+  opacity: 1;
+}
+
+.main-intro .container .intro-contents .intro-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  padding: 3em 2.7em;
+  background-color: #fefefe;
+}
+
+.main-intro .container .intro-contents .intro-content .intro-img {
+  width: 50%;
+  height: 320px;
+  padding: 0 15px;
+}
+
+.main-intro .container .intro-contents .intro-content .intro-img.intro-img-1 {
+  background-image: url(../img/building-1.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.main-intro .container .intro-contents .intro-content .intro-img.intro-img-2 {
+  background-image: url(../img/building-2.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.main-intro .container .intro-contents .intro-content .intro-img.intro-img-3 {
+  background-image: url(../img/building-3.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.main-intro .container .intro-contents .intro-content .intro-img.intro-img-4 {
+  background-image: url(../img/building-4.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.main-intro .container .intro-contents .intro-content .intro-text {
+  width: 50%;
+  padding: 0 30px;
+  color: gray;
+}
+
+.main-intro .container .intro-contents .intro-content .intro-text .intro-text-p {
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.main-intro .container .intro-contents .intro-content .intro-text .intro-text-list {
+  margin-bottom: 10px;
+  padding-left: 40px;
+}
+
+.main-intro .container .intro-contents .intro-content .intro-text .intro-text-list li {
+  font-weight: 300;
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap');
+
+$color: #330000
+$white: #fefefe
+$black: #333333
+$yellow: #F7B633
+$grey: gray
+
+$gradient-from: #43DDE6
+$gradient-to: #9870FC
+
+$font: "Poppins" 
+$font-weight: 400
+$font-size: 15px
+$logo-size: 24px
+
+
+*
+    outline: none
+    font-family: $font
+    font-weight: $font-weight
+    font-size: $font-size
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+
+    a 
+        text-decoration: none
+        color: $black
+        cursor: pointer
+
+        .active
+            color: $yellow
+
+
+@keyframes slideUp 
+    0%
+        transform: translate(0, 40px)
+        opacity: 0
+
+    100%
+        transform: translate(0, 0)
+
+
+body
+    background-color: whitesmoke
+
+.main-header
+    color: $white
+
+.main-menu
+    position: absolute
+    left: 50%
+    transform: translate(-50%, 0)
+    top: 0
+    min-height: 100px
+    padding: 40px 30px
+    display: flex
+    justify-content: center
+    width: 1170px
+    //margin: 0 auto
+    z-index: 4
+
+    .logo
+        font-size: 24px
+        text-transform: uppercase
+        margin: 0 15px
+        width: 16%
+
+        .logo-link
+            color: $white
+            font-weight: 700
+            font-size: $logo-size
+
+    .menu-tabs
+        margin-left: 15px
+        width: 84%
+        display: flex 
+        justify-content: right
+
+        .menu-tabs-list
+            margin: 0
+            margin-top: 8px
+            padding: 0 15px
+
+            .menu-tab
+                display: inline
+                list-style: none
+                
+                .menu-tab-link
+                    color: $white
+                    padding: 30px 12px
+                    // font-size: 15px
+                    &.active
+                        color: $yellow
+
+
+.main-slider
+    // background: url(../img/img_bg_1.jpg) 
+    background-size: cover
+    // padding-top: 100px
+    //min-height: 700px
+    position: relative
+
+    .slide-content
+        padding: 30px 16%
+        z-index: 2
+
+    .header-overlay
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        background: linear-gradient(45deg, $gradient-from, $gradient-to)
+        opacity: 0.8
+        z-index: 1
+
+    .slides-list
+        min-height: 700px
+        position: relative
+
+        .slide
+            display: flex 
+            visibility: hidden
+            transition: visibility .1s ease
+            align-content: center
+            justify-content: center
+            flex-wrap: wrap
+            width: 100%
+            min-height: 700px
+            position: absolute
+            top: 0
+            opacity: 1
+            // z-index: 2
+            //animation: sliderAnimation
+            //animation-duration: 5s
+            //transition: 1s linear
+            //animation-iteration-count: 3 // infinite
+
+            &.slide-1          
+                background: url(../img/img_bg_1.jpg)
+                background-size: cover
+                //animation-delay: 0
+
+            &.slide-2          
+                background: url(../img/img_bg_2.jpg)
+                background-size: cover
+                //animation-delay: 6s
+            
+            &.slide-3          
+                background: url(../img/img_bg_3.jpg)
+                background-size: cover
+                //animation-delay: 12s
+
+            &.slide-4          
+                background: url(../img/img_bg_4.jpg)
+                background-size: cover
+                //animation-delay: 18s
+
+            h1, h2
+                width: 100%
+                text-align: center
+                opacity: 0
+
+            h1 
+                margin-bottom: 30px
+                font-size: 50px
+                line-height: 1.3
+                font-weight: 300
+            
+            h2 
+                font-size: 22px
+                line-height: 1.5
+                margin-bottom: 20px
+                font-weight: 300
+
+        .slide-radio
+            display: none
+
+        .slide-radio:checked + .slide
+            visibility: visible
+
+            h1, h2 
+                animation: slideUp 1s
+                transition: opacity 1s ease
+
+            h1
+                opacity: 1
+
+            h2 
+                opacity: 0.7
+
+        .slide-radio.slide-1:checked ~ .slides-dots .dot-1,
+        .slide-radio.slide-2:checked ~ .slides-dots .dot-2,
+        .slide-radio.slide-3:checked ~ .slides-dots .dot-3,
+        .slide-radio.slide-4:checked ~ .slides-dots .dot-4
+            background-color: $yellow
+            opacity: 1
+
+        .slides-dots
+            position: absolute
+            bottom: 7em
+            text-align: center
+            z-index: 20
+            width: 100%
+            list-style: none
+
+            .slide-dot-link
+                cursor: pointer
+                //text-indent: -9999px
+                width: 11px
+                height: 11px
+                margin: 0 6px
+                background-color: $white
+                border-radius: 20px
+                display: block
+                opacity: 0.2
+                display: inline-block
+
+                &.active
+                    background-color: $yellow
+                    opacity: 1
+
+.main-intro
+    padding: 0 15px 
+    width: 1170px
+    margin: 0 auto 
+
+    .container
+        margin-top: -6.4em
+        position: relative
+        z-index: 4
+
+        .intro-tabs-list
+            display: flex
+            justify-content: space-between
+            box-sizing: 
+
+            .intro-tab
+                width: 25%
+                list-style: none
+                background-color: $white
+                opacity: 0.5
+                text-align: center
+                text-transform: uppercase
+                cursor: pointer
+
+                &.active 
+                    opacity: 1
+
+                .intro-tab-label
+                    display: block
+                    padding: 2.7em 1em 
+                    font-weight: 500
+                    font-size: 14px
+                    cursor: pointer
+
+        .intro-contents
+            position: relative
+
+            .intro-radio
+                display: none
+
+            .intro-radio:checked + .intro-content
+                opacity: 1
+
+            .intro-content
+                display: flex
+                opacity: 0
+                position: absolute 
+                top: 0
+                padding: 3em 2.7em
+                background-color: $white
+
+                .intro-img
+                    width: 50%
+                    height: 320px
+                    padding: 0 15px
+
+                    &.intro-img-1
+                        background-image: url(../img/building-1.jpg)
+                        background-size: cover
+                        background-position: center center
+                        background-repeat: no-repeat
+
+                    &.intro-img-2
+                        background-image: url(../img/building-2.jpg)
+                        background-size: cover
+                        background-position: center center
+                        background-repeat: no-repeat
+
+                    &.intro-img-3
+                        background-image: url(../img/building-3.jpg)
+                        background-size: cover
+                        background-position: center center
+                        background-repeat: no-repeat
+
+                    &.intro-img-4
+                        background-image: url(../img/building-4.jpg)
+                        background-size: cover
+                        background-position: center center
+                        background-repeat: no-repeat
+
+                .intro-text
+                    width: 50%
+                    padding: 0 30px
+                    color: $grey
+
+                    .intro-text-p
+                        font-weight: 300
+                        margin-bottom: 20px
+
+                    .intro-text-list
+                        margin-bottom: 10px 
+                        padding-left: 40px
+
+                        li
+                            font-weight: 300
+                            list-style-type: none
+                            margin-bottom: 10px
