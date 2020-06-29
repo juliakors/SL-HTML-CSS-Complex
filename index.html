@@ -11,18 +11,27 @@
     <!--------------------------- HEADER ----------------------------------------------------------------------------->
     <header class="main-header">
         <nav class="main-menu">
-            <div class="logo">
-                <a href="#" class="logo-link">Complex</a>
-            </div>
-            <div class="menu-tabs">
-                <ul class="menu-tabs-list">
-                    <li class="menu-tab"><a href="" class="menu-tab-link active">Home</a></li>
-                    <li class="menu-tab"><a href="" class="menu-tab-link">Projects</a></li>
-                    <li class="menu-tab"><a href="" class="menu-tab-link">Services</a></li>
-                    <li class="menu-tab"><a href="" class="menu-tab-link">Blog</a></li>
-                    <li class="menu-tab"><a href="" class="menu-tab-link">About</a></li>
-                    <li class="menu-tab"><a href="" class="menu-tab-link">Contact</a></li>
-                </ul>
+            <div class="container">
+                <div class="logo">
+                    <a href="#" class="logo-link">Complex</a>
+                </div>
+                <div class="menu-tabs">
+                    <ul class="menu-tabs-list">
+                        <li class="menu-tab"><a href="" class="menu-tab-link active">Home</a></li>
+                        <li class="menu-tab"><a href="" class="menu-tab-link">Projects</a>
+                            <ul class="menu-tabs-sublist">
+                                <li class="menu-subtab"><a href="#" class="menu-subtab-link">Commercial</a></li>
+                                <li class="menu-subtab"><a href="#" class="menu-subtab-link">Apartment</a></li>
+                                <li class="menu-subtab"><a href="#" class="menu-subtab-link">House</a></li>
+                                <li class="menu-subtab"><a href="#" class="menu-subtab-link">Building</a></li>
+                            </ul>
+                        </li>
+                        <li class="menu-tab"><a href="" class="menu-tab-link">Services</a></li>
+                        <li class="menu-tab"><a href="" class="menu-tab-link">Blog</a></li>
+                        <li class="menu-tab"><a href="" class="menu-tab-link">About</a></li>
+                        <li class="menu-tab"><a href="" class="menu-tab-link">Contact</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
         <div class="main-slider">
@@ -74,7 +83,7 @@
      <div class="main-intro">
          <div class="container">
             <ul class="intro-tabs-list">
-                <li class="intro-tab active">
+                <li class="intro-tab">
                     <label class="intro-tab-label" for="intro-tab-1">
                         <i class="flaticon-sketch"></i> Planning & Design
                     </label>
@@ -96,7 +105,7 @@
                 </li>
             </ul>
             <div class="intro-contents">
-                <input type="radio" name="intro-radio-btn" class="intro-radio tab-1" id="intro-tab-1">
+                <input type="radio" name="intro-radio-btn" class="intro-radio tab-1" id="intro-tab-1" checked>
                 <div class="intro-content content-1">
                     <div class="intro-img intro-img-1"></div>
                     <div class="intro-text">

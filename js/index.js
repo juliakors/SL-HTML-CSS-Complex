@@ -1,3 +1,6 @@
+"use strict";
+
+// Slider
 let userClick = false;
 let sliderDots = document.getElementsByClassName("slide-dot-link");
 for (let i = 0; i < sliderDots.length; i++)
@@ -30,3 +33,23 @@ const runSlider = () => {
 };
 
 runSlider();
+
+
+// Intro tabs
+let introRadios = document.getElementsByName("intro-radio-btn");
+let introTabs = document.getElementsByClassName("intro-tab");
+let introContents = document.getElementsByClassName("intro-content");
+for (let i = 0; i < introRadios.length; i++) {
+    if (introRadios[i].checked) {
+        introTabs[i].classList.add("active");
+        introContents[i].classList.add("active");
+    }
+    introRadios[i].addEventListener("change", () => {
+        for (let j = 0; j < introTabs.length; j++) {
+            introTabs[j].classList.remove("active");
+            introContents[j].classList.remove("active");
+        }
+        introTabs[i].classList.add("active");
+        introContents[i].classList.add("active");
+    })
+}
