@@ -1,0 +1,54 @@
+$breakpoint-phone: 480px
+$breakpoint-tablet: 760px
+$breakpoint-big-tablet: 960px
+$breakpoint-desktop: 1170px
+
+
+@media screen and (max-width: $breakpoint-desktop)
+    .main-menu
+        .container
+            width: $breakpoint-big-tablet
+
+    .main-intro
+        .container
+            width: $breakpoint-big-tablet
+
+    .services
+        .container
+            width: $breakpoint-big-tablet
+
+
+@media screen and (max-width: $breakpoint-big-tablet)
+    .main-menu
+        .container
+            width: $breakpoint-tablet
+
+    .main-intro
+        .container
+            width: $breakpoint-tablet
+
+    .services
+        .container
+            width: $breakpoint-tablet
+
+
+@media screen and (max-width: $breakpoint-tablet)
+    .main-menu
+        padding: 0
+        .container
+            width: 100%
+
+    .main-intro
+        padding: 0
+        .container
+            width: 100%
+
+    .services
+        padding: 0
+        .container
+            width: 100%
+
+    .main-menu
+        .menu-tabs
+            .menu-tabs-list
+                display: none
